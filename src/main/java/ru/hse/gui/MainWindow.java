@@ -91,7 +91,7 @@ public class MainWindow extends JFrame {
 
         JSplitPane splitHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true);
         splitHorizontal.setDividerSize(4);
-        splitHorizontal.setDividerLocation(0.5);
+        splitHorizontal.setDividerLocation(0.4);
 
         ImageIcon icon;
         try (InputStream is = MainWindow.class.getResourceAsStream("/package.png")) {
