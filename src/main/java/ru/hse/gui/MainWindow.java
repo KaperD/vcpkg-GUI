@@ -91,7 +91,7 @@ public class MainWindow extends JFrame {
 
         JSplitPane splitHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true);
         splitHorizontal.setDividerSize(4);
-        splitHorizontal.setDividerLocation(0.4);
+        splitHorizontal.setDividerLocation(0.5);
 
         ImageIcon icon;
         try (InputStream is = MainWindow.class.getResourceAsStream("/package.png")) {
@@ -185,7 +185,7 @@ public class MainWindow extends JFrame {
         settings.addActionListener(e -> {
             String result = JOptionPane.showInputDialog(
                     MainWindow.this,
-                    "Path to vkpkg executable",
+                    "Path to vcpkg executable",
                     Settings.getExecutablePath());
             if (result != null) {
                 log.setText("");
