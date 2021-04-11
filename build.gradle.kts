@@ -1,9 +1,10 @@
 plugins {
     java
+    application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "ru.hse"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -20,16 +21,15 @@ tasks.getByName<Test>("test") {
 
 
 tasks.withType<Jar> {
-    // Otherwise you'll get a "No main manifest attribute" error
     manifest {
         attributes["Main-Class"] = "ru.hse.gui.MainWindow"
     }
+}
 
-    // To add all of the dependencies otherwise a "NoClassDefFoundError" error
-//    from(sourceSets.main.get().output)
-//
-//    dependsOn(configurations.runtimeClasspath)
-//    from({
-//        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
-//    })
+application {
+    mainClass.set("ru.hse.gui.MainWindow")
+}
+
+tasks.compileJava {
+    options.release.set(11)
 }
